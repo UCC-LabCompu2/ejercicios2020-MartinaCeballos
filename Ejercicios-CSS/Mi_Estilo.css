@@ -1,0 +1,26 @@
+ body{
+            text-align: center;
+            font-family: 'Gugi', cursive;
+            background: linear-gradient(to right, #c8e3ff, #ffd8f4);
+        }
+        div{
+            border: 2px dashed #ff1a96;
+            margin: 10px;
+            padding: 5px 30px;
+            border-radius: 15px;
+            box-shadow: 8px 8px #a389a6;
+        }
+        #principal{
+            width: 50px;
+            float: left;
+            border-radius: 50%;
+        }
+        div h3
+        {
+            font-family: 'Quicksand', sans-serif;
+            text-shadow: 3px 3px #999999;
+        }
+        div.especial h1
+        {
+            font-family: "Felix Titling", sans-serif;
+        }
