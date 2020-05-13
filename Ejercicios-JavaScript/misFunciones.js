@@ -72,23 +72,39 @@ function calcular_suma() {
     var nums1, nums2;
     nums1= Number(document.getElementsByName(elementName="sum_num1")[0].value);
     nums2= document.getElementsByName(elementName="sum_num2")[0].value;
-    document.getElementsByName(elementName="sum_total")[0].value=nums1+Number(nums2);
+    document.getElementsByName(elementName="sum_total")[0].innerHTML=nums1+Number(nums2);
 }
 function calcular_resta() {
     var numr1, numr2;
     numr1= Number(document.getElementsByName(elementName="res_num1")[0].value);
     numr2= document.getElementsByName(elementName="res_num2")[0].value;
-    document.getElementsByName(elementName="res_total")[0].value=numr1-Number(numr2);
+    document.getElementsByName(elementName="res_total")[0].innerHTML=numr1-Number(numr2);
 }
 function calcular_multiplicacion() {
     var numm1, numm2;
     numm1= Number(document.getElementsByName(elementName="mul_num1")[0].value);
     numm2= document.getElementsByName(elementName="mul_num2")[0].value;
-    document.getElementsByName(elementName="mul_total")[0].value=numm1*Number(numm2);
+    document.getElementsByName(elementName="mul_total")[0].innerHTML=numm1*Number(numm2);
 }
 function calcular_division() {
     var numd1, numd2;
     numd1= Number(document.getElementsByName(elementName="div_num1")[0].value);
     numd2= document.getElementsByName(elementName="div_num2")[0].value;
-    document.getElementsByName(elementName="div_total")[0].value=numd1/Number(numd2);
+    document.getElementsByName(elementName="div_total")[0].innerHTML=numd1/Number(numd2);
+}
+function Cargarweb(){
+    var cant,uni, urlcomp;
+    cant =document.getElementById(elementid= "distancia").value;
+    uni =document.getElementsByName(elementName="unidades")[0].value;
+
+    urlcomp="segundaWeb.html"+"#"+cant +"#"+uni;
+    window.open(urlcomp);
+
+}
+function CargarResultado(){
+    var urlcomp, cant, uni;
+    urlcomp=window.location.href.split(separator="/")[5];
+    cant=urlcomp.split(separator="#")[1];
+    uni=urlcomp.split(separator="#")[2];
+    document.getElementById(elementid="dist").value= cant + " "+ uni;
 }
