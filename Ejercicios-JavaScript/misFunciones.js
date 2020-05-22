@@ -108,3 +108,19 @@ function CargarResultado(){
     uni=urlcomp.split(separator="#")[2];
     document.getElementById(elementid="dist").value= cant + " "+ uni;
 }
+
+function DibujarCirculoCuadrado () {
+    var canvas= document.getElementById(elementid="myCanvas");
+    var ctx= canvas.getContext("2d");
+
+    var xMax = canvas.width;
+    var yMax = canvas.height;
+    var margen = 5;
+    ctx.fillStyle = "#62a0ff";
+    ctx.fillRect(x=0+margen, y=yMax-40-margen, w=40, h=40);
+
+    ctx.arc(x=xMax/2, y=yMax/2, radius=20, starAngle=0, endAngle=2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "#aa2ba9";
+    ctx.fill();
+}
