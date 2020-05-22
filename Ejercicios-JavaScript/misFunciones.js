@@ -151,3 +151,49 @@ function LimpiarCanvas() {
     canvas.width = canvas.width;
 
 }
+
+function DibujarCuadriculado() {
+    var canvas = document.getElementById(elementid = "myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    var alturaMax = canvas.height;
+    var anchuraMax = canvas.width;
+
+    //Dibujar lineas horizanotales
+    ctx.beginPath();
+    for(var i=0; i<alturaMax;){
+        ctx.moveTo(x=0, y=i);
+        ctx.lineTo(x=anchuraMax, y=i);
+        ctx.strokeStyle = "#ffe0d9";
+        ctx.stroke();
+        i=i+20;
+    }
+    ctx.closePath();
+
+    //Dibujar linaes verticales
+    ctx.beginPath();
+    for(var i=0; i<anchuraMax;){
+        ctx.moveTo(x=i, y=0);
+        ctx.lineTo(x=i, y=alturaMax);
+        ctx.strokeStyle = "#edd6f1";
+        ctx.stroke();
+        i=i+20;
+    }
+    ctx.closePath();
+
+    //Eje X
+    ctx.beginPath();
+    ctx.moveTo(x=0, y=alturaMax/2);
+    ctx.lineTo(x=anchuraMax, y=alturaMax/2);
+    ctx.strokeStyle = "#f4454d";
+    ctx.stroke();
+    ctx.closePath();
+
+    //Eje Y
+    ctx.beginPath();
+    ctx.moveTo(x=anchuraMax/2, y=0);
+    ctx.lineTo(x=anchuraMax/2, y=alturaMax);
+    ctx.strokeStyle = "#804fe6";
+    ctx.stroke();
+    ctx.closePath();
+}
