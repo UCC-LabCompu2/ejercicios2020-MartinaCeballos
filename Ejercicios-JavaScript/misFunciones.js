@@ -124,3 +124,30 @@ function DibujarCirculoCuadrado () {
     ctx.fillStyle = "#aa2ba9";
     ctx.fill();
 }
+
+var bandera;
+function Dibujar(event) {
+    var canvas = document.getElementById(elementid = "canvasaDibujar");
+    var ctx = canvas.getContext("2d");
+
+    var posX = event.clientX;
+    var posY = event.clientY;
+    console.log(posX, posY);
+
+    canvas.onmousedown = function () {
+        bandera = true
+    };
+    canvas.onmouseup = function () {
+        bandera = false
+    };
+    if (bandera) {
+        ctx.fillRect(x = posX, y = posY, w = 10, h = 10);
+        ctx.fill();
+    }
+}
+function LimpiarCanvas() {
+    var canvas = document.getElementById(elementid = "canvasaDibujar");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+
+}
