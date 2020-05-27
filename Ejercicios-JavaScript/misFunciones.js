@@ -211,3 +211,22 @@ function DibujarImagen(posX, posY) {
         ctx.drawImage(img, dx=posX, dy=posY);
     }
 }
+
+x=0;
+dx=2;
+function AnimarAuto(){
+    var canvas = document.getElementById(elementid = "myCanvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+
+    var img = new Image();
+    img.src="images/auto.png";
+
+    img.onload = function(){
+        ctx.drawImage(img, x, dy=100);
+    }
+    if(x>canvas.width){
+        x=0;
+    }
+    x+=dx;
+}
